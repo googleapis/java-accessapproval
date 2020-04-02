@@ -27,9 +27,7 @@ jobs:
         with:
           java-version: 8
       - run: java -version
-      - run: .kokoro/build.bat
-        env:
-          JOB_TYPE: test
+      - run: mvn test -B -V -Dclirr.skip=true -Denforcer.skip=true -Dmaven.javadoc.skip
   dependencies:
     runs-on: ubuntu-latest
     steps:
