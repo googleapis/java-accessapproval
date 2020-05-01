@@ -45,6 +45,9 @@ export GITHUB_TOKEN=$(cat ${KOKORO_KEYSTORE_DIR}/73713_yoshi-automation-github-k
 echo "https://${GITHUB_TOKEN}:@github.com" >> ~/.git-credentials
 git config --global credential.helper 'store --file ~/.git-credentials'
 
+export GITHUB_USER=yoshi-automation
+export GITHUB_EMAIL=yoshi-automation@google.com
+
 python3 -m venv env
 source env/bin/activate
 python3 -m pip install --upgrade --quiet -r requirements.txt
