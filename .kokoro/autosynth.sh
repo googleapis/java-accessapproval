@@ -41,7 +41,7 @@ export PYTHONPATH=`pwd`
 
 set +e
 # synthtool returns exit code 28 if there are no changes
-python3 -m autosynth.synth --repository=googleapis/java-accessapproval
+time python3 -m autosynth.synth --repository=googleapis/java-accessapproval
 EXIT_CODE=$?
 
 if [[ ${EXIT_CODE} -ne 0 && ${EXIT_CODE} -ne 28 ]]
