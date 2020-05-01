@@ -21,6 +21,7 @@ cd ${KOKORO_ARTIFACTS_DIR}/github/synthtool
 export PYTHONUNBUFFERED=1
 
 # Add github to known hosts.
+mkdir -p ~/.ssh
 ssh-keyscan github.com >> ~/.ssh/known_hosts
 
 # Kokoro exposes this as a file, but the scripts expect just a plain variable.
