@@ -15,8 +15,7 @@
 
 set -eo pipefail
 
-pwd
-cd ${KOKORO_ARTIFACTS_DIR}/github-synthtool
+cd ${KOKORO_ARTIFACTS_DIR}/github/github-synthtool
 
 # Upgrade the NPM version
 sudo npm install -g npm
