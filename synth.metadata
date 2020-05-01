@@ -1,20 +1,25 @@
 {
-  "updateTime": "2020-03-25T21:40:04.564473Z",
   "sources": [
+    {
+      "git": {
+        "name": ".",
+        "remote": "https://github.com/googleapis/java-accessapproval.git",
+        "sha": "9f0e4adc1516be76491ab7047f066056ab865b75"
+      }
+    },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "1b0fff5f2ec6dc4a9443d9b50e70e9c94c30c45b",
-        "internalRef": "302928106",
-        "log": "1b0fff5f2ec6dc4a9443d9b50e70e9c94c30c45b\ndocs: remove an internal lint declaration\n\nPiperOrigin-RevId: 302928106\n\n2be23f3f3036a6f7ce0844def3d2d3da74e5d415\nfix(google/maps): Add post-processing rules for Google Maps APIs\n\nPiperOrigin-RevId: 302925222\n\nfd83ab212176a1042e8d45ea90766b3bf59ac679\nfix: migrate osconfig/agentendpoint/v1 go_gapic_library target to microgen impl\n\nPiperOrigin-RevId: 302913609\n\n"
+        "sha": "6f8350c0df231d7e742fa10dbf929f33047715c9",
+        "internalRef": "305537104"
       }
     },
     {
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "e36822bfa0acb355502dab391b8ef9c4f30208d8"
+        "sha": "f8a9933e5e98202b04ef427f28d1d79221190fa4"
       }
     }
   ],
