@@ -15,6 +15,7 @@
 
 set -eo pipefail
 
+pwd
 cd ${KOKORO_ARTIFACTS_DIR}/github-synthtool
 
 # Upgrade the NPM version
