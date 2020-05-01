@@ -39,6 +39,11 @@ source env/bin/activate
 python3 -m pip install --upgrade --quiet -r requirements.txt
 export PYTHONPATH=`pwd`
 
+which python
+python --version
+which python3
+python3 --version
+
 set +e
 # synthtool returns exit code 28 if there are no changes
 time python3 -m autosynth.synth --repository=googleapis/java-accessapproval
