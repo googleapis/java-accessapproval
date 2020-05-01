@@ -49,4 +49,4 @@ python3 -m venv env
 source env/bin/activate
 python3 -m pip install --upgrade --quiet -r requirements.txt
 export PYTHONPATH=`pwd`
-python3 -m autosynth.multi --repository=googleapis/java-accessapproval
+python3 -m autosynth.synth --repository=googleapis/java-accessapproval
