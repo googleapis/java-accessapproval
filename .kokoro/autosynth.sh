@@ -15,7 +15,7 @@
 
 set -eo pipefail
 
-cd ${KOKORO_ARTIFACTS_DIR}/github/github-synthtool
+cd ${KOKORO_ARTIFACTS_DIR}/github/synthtool
 
 # Disable buffering, so that the logs stream through.
 export PYTHONUNBUFFERED=1
