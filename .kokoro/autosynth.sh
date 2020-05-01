@@ -17,21 +17,6 @@ set -eo pipefail
 
 cd ${KOKORO_ARTIFACTS_DIR}/github/github-synthtool
 
-# Upgrade the NPM version
-sudo npm install -g npm
-
-# Install bazel 1.2.0
-mkdir -p ~/bazel
-curl -L https://github.com/bazelbuild/bazel/releases/download/1.2.0/bazel-1.2.0-linux-x86_64 -o ~/bazel/bazel
-chmod +x ~/bazel/bazel
-export PATH=~/bazel:"$PATH"
-
-# Kokoro currently uses 3.6.1, but upgrade to 3.6.9 as virtualenv creation
-# is broken in 3.6.1 with virtualenv>=20.0.0
-cd /home/kbuilder/.pyenv/plugins/python-build/../.. && git pull && cd -
-pyenv install 3.6.9
-pyenv global 3.6.9
-
 # Disable buffering, so that the logs stream through.
 export PYTHONUNBUFFERED=1
 
