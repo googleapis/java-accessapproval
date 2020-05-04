@@ -43,6 +43,7 @@ which python
 python --version
 which python3
 python3 --version
+/usr/bin/python --version
 
 set +e
 # synthtool returns exit code 28 if there are no changes
