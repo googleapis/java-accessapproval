@@ -18,7 +18,6 @@ package accessapproval;
 // [START accessapproval_quickstart]
 import com.google.cloud.accessapproval.v1.AccessApprovalAdminClient;
 import com.google.cloud.accessapproval.v1.ApprovalRequest;
-
 import java.io.IOException;
 
 public class Quickstart {
@@ -32,7 +31,8 @@ public class Quickstart {
   public void quickstart(String projectId) throws IOException {
     try (AccessApprovalAdminClient client = AccessApprovalAdminClient.create()) {
       String parent = "projects/" + projectId;
-      AccessApprovalAdminClient.ListApprovalRequestsPagedResponse response = client.listApprovalRequests(parent);
+      AccessApprovalAdminClient.ListApprovalRequestsPagedResponse response =
+          client.listApprovalRequests(parent);
       int total = 0;
       for (ApprovalRequest request : response.iterateAll()) {
         System.out.println(request.getName());

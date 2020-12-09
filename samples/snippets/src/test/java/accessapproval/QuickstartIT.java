@@ -15,23 +15,21 @@
  */
 package accessapproval;
 
+import static org.junit.Assert.assertEquals;
+
 import com.google.cloud.testing.junit4.StdOutCaptureRule;
 import com.google.common.base.Strings;
+import java.io.IOException;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.junit.Test;
 
-import java.io.IOException;
-
-import static org.junit.Assert.assertEquals;
-
 public class QuickstartIT {
   private static final String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
 
-  @Rule
-  public StdOutCaptureRule stdOutCap = new StdOutCaptureRule();
-  
+  @Rule public StdOutCaptureRule stdOutCap = new StdOutCaptureRule();
+
   @BeforeClass
   public static void beforeAll() throws Exception {
     Assert.assertFalse("missing GOOGLE_CLOUD_PROJECT", Strings.isNullOrEmpty(PROJECT_ID));
@@ -43,5 +41,4 @@ public class QuickstartIT {
     quickstart.quickstart(PROJECT_ID);
     assertEquals("No approval requests found\n", stdOutCap.getCapturedOutputAsUtf8String());
   }
-
 }
