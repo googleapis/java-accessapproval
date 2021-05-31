@@ -67,10 +67,10 @@ import org.threeten.bp.Duration;
  * <p>The default instance has everything set to sensible defaults:
  *
  * <ul>
- *   <li> The default service address (accessapproval.googleapis.com) and default port (443) are
+ *   <li>The default service address (accessapproval.googleapis.com) and default port (443) are
  *       used.
- *   <li> Credentials are acquired automatically through Application Default Credentials.
- *   <li> Retries are configured for idempotent methods but not for non-idempotent methods.
+ *   <li>Credentials are acquired automatically through Application Default Credentials.
+ *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
  * </ul>
  *
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
@@ -101,7 +101,8 @@ public class AccessApprovalStubSettings extends StubSettings<AccessApprovalStubS
       ImmutableList.<String>builder().add("https://www.googleapis.com/auth/cloud-platform").build();
 
   private final PagedCallSettings<
-          ListApprovalRequestsMessage, ListApprovalRequestsResponse,
+          ListApprovalRequestsMessage,
+          ListApprovalRequestsResponse,
           ListApprovalRequestsPagedResponse>
       listApprovalRequestsSettings;
   private final UnaryCallSettings<GetApprovalRequestMessage, ApprovalRequest>
@@ -159,11 +160,13 @@ public class AccessApprovalStubSettings extends StubSettings<AccessApprovalStubS
           };
 
   private static final PagedListResponseFactory<
-          ListApprovalRequestsMessage, ListApprovalRequestsResponse,
+          ListApprovalRequestsMessage,
+          ListApprovalRequestsResponse,
           ListApprovalRequestsPagedResponse>
       LIST_APPROVAL_REQUESTS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListApprovalRequestsMessage, ListApprovalRequestsResponse,
+              ListApprovalRequestsMessage,
+              ListApprovalRequestsResponse,
               ListApprovalRequestsPagedResponse>() {
             @Override
             public ApiFuture<ListApprovalRequestsPagedResponse> getFuturePagedResponse(
@@ -182,7 +185,8 @@ public class AccessApprovalStubSettings extends StubSettings<AccessApprovalStubS
 
   /** Returns the object with the settings used for calls to listApprovalRequests. */
   public PagedCallSettings<
-          ListApprovalRequestsMessage, ListApprovalRequestsResponse,
+          ListApprovalRequestsMessage,
+          ListApprovalRequestsResponse,
           ListApprovalRequestsPagedResponse>
       listApprovalRequestsSettings() {
     return listApprovalRequestsSettings;
@@ -308,7 +312,8 @@ public class AccessApprovalStubSettings extends StubSettings<AccessApprovalStubS
   public static class Builder extends StubSettings.Builder<AccessApprovalStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
     private final PagedCallSettings.Builder<
-            ListApprovalRequestsMessage, ListApprovalRequestsResponse,
+            ListApprovalRequestsMessage,
+            ListApprovalRequestsResponse,
             ListApprovalRequestsPagedResponse>
         listApprovalRequestsSettings;
     private final UnaryCallSettings.Builder<GetApprovalRequestMessage, ApprovalRequest>
@@ -486,7 +491,8 @@ public class AccessApprovalStubSettings extends StubSettings<AccessApprovalStubS
 
     /** Returns the builder for the settings used for calls to listApprovalRequests. */
     public PagedCallSettings.Builder<
-            ListApprovalRequestsMessage, ListApprovalRequestsResponse,
+            ListApprovalRequestsMessage,
+            ListApprovalRequestsResponse,
             ListApprovalRequestsPagedResponse>
         listApprovalRequestsSettings() {
       return listApprovalRequestsSettings;
