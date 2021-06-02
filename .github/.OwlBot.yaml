@@ -20,6 +20,9 @@ deep-remove-regex:
 - "/proto-google-.*/src"
 - "/google-.*/src"
 
+deep-preserve-regex:
+- "/google-cloud-accessapproval/src/test/java/com/google/cloud/accessapproval/v1/it"
+
 deep-copy-regex:
 - source: "/google/cloud/accessapproval/(v.*)/.*-java/proto-google-.*/src"
   dest: "/owl-bot-staging/$1/proto-google-cloud-accessapproval-$1/src"
