@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://www.github.com/googleapis/java-accessapproval/compare/v1.1.3...v1.2.0) (2021-08-04)
+
+
+### Features
+
+* configure initial sp version ([#507](https://www.github.com/googleapis/java-accessapproval/issues/507)) ([494535c](https://www.github.com/googleapis/java-accessapproval/commit/494535ca3e887f0357db4e5ce6ce7d3fa486bccb))
+
 ### [1.1.3](https://www.github.com/googleapis/java-accessapproval/compare/v1.1.2...v1.1.3) (2021-07-02)
 
 
