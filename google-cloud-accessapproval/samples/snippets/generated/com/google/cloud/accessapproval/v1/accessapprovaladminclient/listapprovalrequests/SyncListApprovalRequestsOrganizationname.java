@@ -16,22 +16,23 @@
 
 package com.google.cloud.accessapproval.v1.samples;
 
-// [START accessapproval_v1_generated_accessapprovaladminclient_listapprovalrequests_foldername_sync]
+// [START
+// accessapproval_v1_generated_accessapprovaladminclient_listapprovalrequests_organizationname_sync]
 import com.google.cloud.accessapproval.v1.AccessApprovalAdminClient;
 import com.google.cloud.accessapproval.v1.ApprovalRequest;
-import com.google.cloud.accessapproval.v1.FolderName;
+import com.google.cloud.accessapproval.v1.OrganizationName;
 
-public class SyncListApprovalRequestsFoldername {
+public class SyncListApprovalRequestsOrganizationname {
 
   public static void main(String[] args) throws Exception {
-    syncListApprovalRequestsFoldername();
+    syncListApprovalRequestsOrganizationname();
   }
 
-  public static void syncListApprovalRequestsFoldername() throws Exception {
+  public static void syncListApprovalRequestsOrganizationname() throws Exception {
     // This snippet has been automatically generated for illustrative purposes only.
     // It may require modifications to work in your environment.
     try (AccessApprovalAdminClient accessApprovalAdminClient = AccessApprovalAdminClient.create()) {
-      FolderName parent = FolderName.of("[FOLDER]");
+      OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
       for (ApprovalRequest element :
           accessApprovalAdminClient.listApprovalRequests(parent).iterateAll()) {
         // doThingsWith(element);
@@ -39,4 +40,5 @@ public class SyncListApprovalRequestsFoldername {
     }
   }
 }
-// [END accessapproval_v1_generated_accessapprovaladminclient_listapprovalrequests_foldername_sync]
+// [END
+// accessapproval_v1_generated_accessapprovaladminclient_listapprovalrequests_organizationname_sync]

@@ -16,27 +16,27 @@
 
 package com.google.cloud.accessapproval.v1.samples;
 
-// [START accessapproval_v1_generated_accessapprovaladminclient_updateaccessapprovalsettings_accessapprovalsettingsfieldmask_sync]
+// [START
+// accessapproval_v1_generated_accessapprovaladminclient_getapprovalrequest_approvalrequestname_sync]
 import com.google.cloud.accessapproval.v1.AccessApprovalAdminClient;
-import com.google.cloud.accessapproval.v1.AccessApprovalSettings;
-import com.google.protobuf.FieldMask;
+import com.google.cloud.accessapproval.v1.ApprovalRequest;
+import com.google.cloud.accessapproval.v1.ApprovalRequestName;
 
-public class SyncUpdateAccessApprovalSettingsAccessapprovalsettingsFieldmask {
+public class SyncGetApprovalRequestApprovalrequestname {
 
   public static void main(String[] args) throws Exception {
-    syncUpdateAccessApprovalSettingsAccessapprovalsettingsFieldmask();
+    syncGetApprovalRequestApprovalrequestname();
   }
 
-  public static void syncUpdateAccessApprovalSettingsAccessapprovalsettingsFieldmask()
-      throws Exception {
+  public static void syncGetApprovalRequestApprovalrequestname() throws Exception {
     // This snippet has been automatically generated for illustrative purposes only.
     // It may require modifications to work in your environment.
     try (AccessApprovalAdminClient accessApprovalAdminClient = AccessApprovalAdminClient.create()) {
-      AccessApprovalSettings settings = AccessApprovalSettings.newBuilder().build();
-      FieldMask updateMask = FieldMask.newBuilder().build();
-      AccessApprovalSettings response =
-          accessApprovalAdminClient.updateAccessApprovalSettings(settings, updateMask);
+      ApprovalRequestName name =
+          ApprovalRequestName.ofProjectApprovalRequestName("[PROJECT]", "[APPROVAL_REQUEST]");
+      ApprovalRequest response = accessApprovalAdminClient.getApprovalRequest(name);
     }
   }
 }
-// [END accessapproval_v1_generated_accessapprovaladminclient_updateaccessapprovalsettings_accessapprovalsettingsfieldmask_sync]
+// [END
+// accessapproval_v1_generated_accessapprovaladminclient_getapprovalrequest_approvalrequestname_sync]

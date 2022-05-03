@@ -16,27 +16,27 @@
 
 package com.google.cloud.accessapproval.v1.samples;
 
-// [START accessapproval_v1_generated_accessapprovaladminclient_listapprovalrequests_projectname_sync]
+// [START accessapproval_v1_generated_accessapprovaladminclient_deleteaccessapprovalsettings_sync]
 import com.google.cloud.accessapproval.v1.AccessApprovalAdminClient;
-import com.google.cloud.accessapproval.v1.ApprovalRequest;
-import com.google.cloud.accessapproval.v1.ProjectName;
+import com.google.cloud.accessapproval.v1.AccessApprovalSettingsName;
+import com.google.cloud.accessapproval.v1.DeleteAccessApprovalSettingsMessage;
 
-public class SyncListApprovalRequestsProjectname {
+public class SyncDeleteAccessApprovalSettings {
 
   public static void main(String[] args) throws Exception {
-    syncListApprovalRequestsProjectname();
+    syncDeleteAccessApprovalSettings();
   }
 
-  public static void syncListApprovalRequestsProjectname() throws Exception {
+  public static void syncDeleteAccessApprovalSettings() throws Exception {
     // This snippet has been automatically generated for illustrative purposes only.
     // It may require modifications to work in your environment.
     try (AccessApprovalAdminClient accessApprovalAdminClient = AccessApprovalAdminClient.create()) {
-      ProjectName parent = ProjectName.of("[PROJECT]");
-      for (ApprovalRequest element :
-          accessApprovalAdminClient.listApprovalRequests(parent).iterateAll()) {
-        // doThingsWith(element);
-      }
+      DeleteAccessApprovalSettingsMessage request =
+          DeleteAccessApprovalSettingsMessage.newBuilder()
+              .setName(AccessApprovalSettingsName.ofProjectName("[PROJECT]").toString())
+              .build();
+      accessApprovalAdminClient.deleteAccessApprovalSettings(request);
     }
   }
 }
-// [END accessapproval_v1_generated_accessapprovaladminclient_listapprovalrequests_projectname_sync]
+// [END accessapproval_v1_generated_accessapprovaladminclient_deleteaccessapprovalsettings_sync]

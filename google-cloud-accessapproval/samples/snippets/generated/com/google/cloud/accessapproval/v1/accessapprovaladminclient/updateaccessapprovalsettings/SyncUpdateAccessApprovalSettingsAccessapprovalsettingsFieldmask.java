@@ -16,24 +16,29 @@
 
 package com.google.cloud.accessapproval.v1.samples;
 
-// [START accessapproval_v1_generated_accessapprovaladminclient_deleteaccessapprovalsettings_string_sync]
+// [START
+// accessapproval_v1_generated_accessapprovaladminclient_updateaccessapprovalsettings_accessapprovalsettingsfieldmask_sync]
 import com.google.cloud.accessapproval.v1.AccessApprovalAdminClient;
-import com.google.cloud.accessapproval.v1.AccessApprovalSettingsName;
-import com.google.protobuf.Empty;
+import com.google.cloud.accessapproval.v1.AccessApprovalSettings;
+import com.google.protobuf.FieldMask;
 
-public class SyncDeleteAccessApprovalSettingsString {
+public class SyncUpdateAccessApprovalSettingsAccessapprovalsettingsFieldmask {
 
   public static void main(String[] args) throws Exception {
-    syncDeleteAccessApprovalSettingsString();
+    syncUpdateAccessApprovalSettingsAccessapprovalsettingsFieldmask();
   }
 
-  public static void syncDeleteAccessApprovalSettingsString() throws Exception {
+  public static void syncUpdateAccessApprovalSettingsAccessapprovalsettingsFieldmask()
+      throws Exception {
     // This snippet has been automatically generated for illustrative purposes only.
     // It may require modifications to work in your environment.
     try (AccessApprovalAdminClient accessApprovalAdminClient = AccessApprovalAdminClient.create()) {
-      String name = AccessApprovalSettingsName.ofProjectName("[PROJECT]").toString();
-      accessApprovalAdminClient.deleteAccessApprovalSettings(name);
+      AccessApprovalSettings settings = AccessApprovalSettings.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      AccessApprovalSettings response =
+          accessApprovalAdminClient.updateAccessApprovalSettings(settings, updateMask);
     }
   }
 }
-// [END accessapproval_v1_generated_accessapprovaladminclient_deleteaccessapprovalsettings_string_sync]
+// [END
+// accessapproval_v1_generated_accessapprovaladminclient_updateaccessapprovalsettings_accessapprovalsettingsfieldmask_sync]
