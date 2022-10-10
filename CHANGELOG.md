@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.4.10](https://github.com/googleapis/java-accessapproval/compare/v2.4.9...v2.4.10) (2022-10-07)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-core to v2.8.20 ([#852](https://github.com/googleapis/java-accessapproval/issues/852)) ([8c9a1f4](https://github.com/googleapis/java-accessapproval/commit/8c9a1f43a550dc0545b90c00e52328aa939cc383))
+
 ## [2.4.9](https://github.com/googleapis/java-accessapproval/compare/v2.4.8...v2.4.9) (2022-10-04)
 
 
