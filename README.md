@@ -8,6 +8,14 @@ Java idiomatic client for [Access Approval][product-docs].
 - [Product Documentation][product-docs]
 - [Client Library Documentation][javadocs]
 
+{% note %}
+
+Notes:
+
+The latest source code of this library has moved to
+[google-cloud-java/google-java-accessapproval](
+https://github.com/googleapis/google-cloud-java/tree/main/java-accessapproval)
+{% endnote %}
 
 ## Quickstart
 
