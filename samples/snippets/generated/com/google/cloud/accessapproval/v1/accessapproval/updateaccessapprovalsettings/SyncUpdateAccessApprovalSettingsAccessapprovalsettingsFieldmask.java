@@ -16,35 +16,30 @@
 
 package com.google.cloud.accessapproval.v1.samples;
 
-// [START accessapproval_v1_generated_AccessApprovalAdminSettings_GetApprovalRequest_sync]
-import com.google.cloud.accessapproval.v1.AccessApprovalAdminSettings;
-import java.time.Duration;
+// [START accessapproval_v1_generated_AccessApproval_UpdateAccessApprovalSettings_AccessapprovalsettingsFieldmask_sync]
+import com.google.cloud.accessapproval.v1.AccessApprovalAdminClient;
+import com.google.cloud.accessapproval.v1.AccessApprovalSettings;
+import com.google.protobuf.FieldMask;
 
-public class SyncGetApprovalRequest {
+public class SyncUpdateAccessApprovalSettingsAccessapprovalsettingsFieldmask {
 
   public static void main(String[] args) throws Exception {
-    syncGetApprovalRequest();
+    syncUpdateAccessApprovalSettingsAccessapprovalsettingsFieldmask();
   }
 
-  public static void syncGetApprovalRequest() throws Exception {
+  public static void syncUpdateAccessApprovalSettingsAccessapprovalsettingsFieldmask()
+      throws Exception {
     // This snippet has been automatically generated and should be regarded as a code template only.
     // It will require modifications to work:
     // - It may require correct/in-range values for request initialization.
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-    AccessApprovalAdminSettings.Builder accessApprovalAdminSettingsBuilder =
-        AccessApprovalAdminSettings.newBuilder();
-    accessApprovalAdminSettingsBuilder
-        .getApprovalRequestSettings()
-        .setRetrySettings(
-            accessApprovalAdminSettingsBuilder
-                .getApprovalRequestSettings()
-                .getRetrySettings()
-                .toBuilder()
-                .setTotalTimeout(Duration.ofSeconds(30))
-                .build());
-    AccessApprovalAdminSettings accessApprovalAdminSettings =
-        accessApprovalAdminSettingsBuilder.build();
+    try (AccessApprovalAdminClient accessApprovalAdminClient = AccessApprovalAdminClient.create()) {
+      AccessApprovalSettings settings = AccessApprovalSettings.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      AccessApprovalSettings response =
+          accessApprovalAdminClient.updateAccessApprovalSettings(settings, updateMask);
+    }
   }
 }
-// [END accessapproval_v1_generated_AccessApprovalAdminSettings_GetApprovalRequest_sync]
+// [END accessapproval_v1_generated_AccessApproval_UpdateAccessApprovalSettings_AccessapprovalsettingsFieldmask_sync]

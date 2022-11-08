@@ -16,9 +16,11 @@
 
 package com.google.cloud.accessapproval.v1.samples;
 
-// [START accessapproval_v1_generated_AccessApprovalAdminSettings_GetApprovalRequest_sync]
-import com.google.cloud.accessapproval.v1.AccessApprovalAdminSettings;
-import java.time.Duration;
+// [START accessapproval_v1_generated_AccessApproval_GetApprovalRequest_sync]
+import com.google.cloud.accessapproval.v1.AccessApprovalAdminClient;
+import com.google.cloud.accessapproval.v1.ApprovalRequest;
+import com.google.cloud.accessapproval.v1.ApprovalRequestName;
+import com.google.cloud.accessapproval.v1.GetApprovalRequestMessage;
 
 public class SyncGetApprovalRequest {
 
@@ -32,19 +34,16 @@ public class SyncGetApprovalRequest {
     // - It may require correct/in-range values for request initialization.
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-    AccessApprovalAdminSettings.Builder accessApprovalAdminSettingsBuilder =
-        AccessApprovalAdminSettings.newBuilder();
-    accessApprovalAdminSettingsBuilder
-        .getApprovalRequestSettings()
-        .setRetrySettings(
-            accessApprovalAdminSettingsBuilder
-                .getApprovalRequestSettings()
-                .getRetrySettings()
-                .toBuilder()
-                .setTotalTimeout(Duration.ofSeconds(30))
-                .build());
-    AccessApprovalAdminSettings accessApprovalAdminSettings =
-        accessApprovalAdminSettingsBuilder.build();
+    try (AccessApprovalAdminClient accessApprovalAdminClient = AccessApprovalAdminClient.create()) {
+      GetApprovalRequestMessage request =
+          GetApprovalRequestMessage.newBuilder()
+              .setName(
+                  ApprovalRequestName.ofProjectApprovalRequestName(
+                          "[PROJECT]", "[APPROVAL_REQUEST]")
+                      .toString())
+              .build();
+      ApprovalRequest response = accessApprovalAdminClient.getApprovalRequest(request);
+    }
   }
 }
-// [END accessapproval_v1_generated_AccessApprovalAdminSettings_GetApprovalRequest_sync]
+// [END accessapproval_v1_generated_AccessApproval_GetApprovalRequest_sync]

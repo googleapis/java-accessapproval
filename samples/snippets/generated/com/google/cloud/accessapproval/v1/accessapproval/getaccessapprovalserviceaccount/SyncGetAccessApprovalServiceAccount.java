@@ -16,35 +16,29 @@
 
 package com.google.cloud.accessapproval.v1.samples;
 
-// [START accessapproval_v1_generated_AccessApprovalAdminSettings_GetApprovalRequest_sync]
-import com.google.cloud.accessapproval.v1.AccessApprovalAdminSettings;
-import java.time.Duration;
+// [START accessapproval_v1_generated_AccessApproval_GetAccessApprovalServiceAccount_sync]
+import com.google.cloud.accessapproval.v1.AccessApprovalAdminClient;
+import com.google.cloud.accessapproval.v1.AccessApprovalServiceAccount;
+import com.google.cloud.accessapproval.v1.GetAccessApprovalServiceAccountMessage;
 
-public class SyncGetApprovalRequest {
+public class SyncGetAccessApprovalServiceAccount {
 
   public static void main(String[] args) throws Exception {
-    syncGetApprovalRequest();
+    syncGetAccessApprovalServiceAccount();
   }
 
-  public static void syncGetApprovalRequest() throws Exception {
+  public static void syncGetAccessApprovalServiceAccount() throws Exception {
     // This snippet has been automatically generated and should be regarded as a code template only.
     // It will require modifications to work:
     // - It may require correct/in-range values for request initialization.
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-    AccessApprovalAdminSettings.Builder accessApprovalAdminSettingsBuilder =
-        AccessApprovalAdminSettings.newBuilder();
-    accessApprovalAdminSettingsBuilder
-        .getApprovalRequestSettings()
-        .setRetrySettings(
-            accessApprovalAdminSettingsBuilder
-                .getApprovalRequestSettings()
-                .getRetrySettings()
-                .toBuilder()
-                .setTotalTimeout(Duration.ofSeconds(30))
-                .build());
-    AccessApprovalAdminSettings accessApprovalAdminSettings =
-        accessApprovalAdminSettingsBuilder.build();
+    try (AccessApprovalAdminClient accessApprovalAdminClient = AccessApprovalAdminClient.create()) {
+      GetAccessApprovalServiceAccountMessage request =
+          GetAccessApprovalServiceAccountMessage.newBuilder().setName("name3373707").build();
+      AccessApprovalServiceAccount response =
+          accessApprovalAdminClient.getAccessApprovalServiceAccount(request);
+    }
   }
 }
-// [END accessapproval_v1_generated_AccessApprovalAdminSettings_GetApprovalRequest_sync]
+// [END accessapproval_v1_generated_AccessApproval_GetAccessApprovalServiceAccount_sync]

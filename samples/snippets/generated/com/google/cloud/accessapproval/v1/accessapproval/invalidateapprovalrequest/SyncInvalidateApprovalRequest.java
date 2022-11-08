@@ -16,35 +16,34 @@
 
 package com.google.cloud.accessapproval.v1.samples;
 
-// [START accessapproval_v1_generated_AccessApprovalAdminSettings_GetApprovalRequest_sync]
-import com.google.cloud.accessapproval.v1.AccessApprovalAdminSettings;
-import java.time.Duration;
+// [START accessapproval_v1_generated_AccessApproval_InvalidateApprovalRequest_sync]
+import com.google.cloud.accessapproval.v1.AccessApprovalAdminClient;
+import com.google.cloud.accessapproval.v1.ApprovalRequest;
+import com.google.cloud.accessapproval.v1.ApprovalRequestName;
+import com.google.cloud.accessapproval.v1.InvalidateApprovalRequestMessage;
 
-public class SyncGetApprovalRequest {
+public class SyncInvalidateApprovalRequest {
 
   public static void main(String[] args) throws Exception {
-    syncGetApprovalRequest();
+    syncInvalidateApprovalRequest();
   }
 
-  public static void syncGetApprovalRequest() throws Exception {
+  public static void syncInvalidateApprovalRequest() throws Exception {
     // This snippet has been automatically generated and should be regarded as a code template only.
     // It will require modifications to work:
     // - It may require correct/in-range values for request initialization.
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-    AccessApprovalAdminSettings.Builder accessApprovalAdminSettingsBuilder =
-        AccessApprovalAdminSettings.newBuilder();
-    accessApprovalAdminSettingsBuilder
-        .getApprovalRequestSettings()
-        .setRetrySettings(
-            accessApprovalAdminSettingsBuilder
-                .getApprovalRequestSettings()
-                .getRetrySettings()
-                .toBuilder()
-                .setTotalTimeout(Duration.ofSeconds(30))
-                .build());
-    AccessApprovalAdminSettings accessApprovalAdminSettings =
-        accessApprovalAdminSettingsBuilder.build();
+    try (AccessApprovalAdminClient accessApprovalAdminClient = AccessApprovalAdminClient.create()) {
+      InvalidateApprovalRequestMessage request =
+          InvalidateApprovalRequestMessage.newBuilder()
+              .setName(
+                  ApprovalRequestName.ofProjectApprovalRequestName(
+                          "[PROJECT]", "[APPROVAL_REQUEST]")
+                      .toString())
+              .build();
+      ApprovalRequest response = accessApprovalAdminClient.invalidateApprovalRequest(request);
+    }
   }
 }
-// [END accessapproval_v1_generated_AccessApprovalAdminSettings_GetApprovalRequest_sync]
+// [END accessapproval_v1_generated_AccessApproval_InvalidateApprovalRequest_sync]
